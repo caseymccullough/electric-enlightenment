@@ -23,9 +23,9 @@ React, JavaScript, HTML, CSS, Node.js, MongoDB, Express, [Google Charts Library]
 6. Click the Run Simulation Button when your list is complete. 
 
 <img src="https://user-images.githubusercontent.com/11179812/128205199-c13bcb76-cdad-4ed9-86f6-d60c26c7c116.png" width="50%" height="50% />
+                                                                                                                                     
+![Screen Shot 2021-08-04 at 11 09 57 AM](https://user-images.githubusercontent.com/11179812/128206092-cd135441-859d-4bc2-8cea-45c274980764.png)
 
-
-<img src="https://user-images.githubusercontent.com/11179812/127501303-b5b6932e-d624-44af-aadf-f2521a485475.png" width="50%" height="50%" />
 
 5. Change the form as needed to describe the system planned for the given location. 
 6. Click the right arrow to move to the Data Summary page. 
