@@ -1,10 +1,9 @@
 import Load from '../Load/Load';
-import style from '../../styles.css';
+import  '../../styles.css';
 
-export default function LoadList({loads}) {
-      
-   return (
-     
+export default function LoadList({loads, setLoads, getLoads}) {
+   
+   return (    
          <div id="loads-table" >
             <table>
                <thead>
@@ -17,7 +16,7 @@ export default function LoadList({loads}) {
                </thead>
                <tbody>
                      {loads.map((load, i) => 
-                  <Load load = {load} key= {i}></Load>
+                  <Load load = {load} setLoad = {setLoads} getLoads = {getLoads} key= {i}></Load>
                   )}
                </tbody>
             </table>

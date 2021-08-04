@@ -1,4 +1,4 @@
-import style from '../../styles.css';
+import  '../../styles.css';
 import {useState} from "react";
 
 export default function RegisterForm(props) {
@@ -6,7 +6,8 @@ export default function RegisterForm(props) {
        const [userFormData, setUserFormData] = useState({
         username: "",
         password: "",
-        zipcode: "",  
+        zipcode: "",
+        loads: []  
       });
 
    const handleChange = (event)=> {
@@ -15,7 +16,7 @@ export default function RegisterForm(props) {
    }
 
    const createUser = async (event) => {
-    event.preventDefault();
+   // event.preventDefault();
     const body = {...userFormData}; // spreads data into the body
     try {
        const response = await fetch("https://electric-sage-api.herokuapp.com/user", {

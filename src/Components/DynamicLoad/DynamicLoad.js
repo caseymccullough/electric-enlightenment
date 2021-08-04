@@ -1,9 +1,6 @@
-import {useState} from "react";
 import "./DynamicLoad.css";
 
 export default function DynamicLoad({load, time }) {
-
-   //const [isOn, setIsOn] = useState(false);
    
    const toggleOnSwitch = () => {
       load.isOn = (!load.isOn);
@@ -25,7 +22,6 @@ export default function DynamicLoad({load, time }) {
       console.log('handle click');
       toggleOnSwitch();
       load.currentWattage = load.isOn ? load.wattage: load.standbyWattage; 
-
    }
 
    const issueOnOffReport = (timeSignal) => { // negative means turned off

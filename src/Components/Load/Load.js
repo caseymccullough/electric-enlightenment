@@ -1,23 +1,31 @@
-import {useState} from "react";
 
-export default function Load({load}) {
+export default function Load({load, getLoads}) {
 
    const clickResponse = () => {
-      console.log (load.id);
+     console.log ("to be deleted");
+      console.log (load._id);
       console.log (load.name);
-      deleteLoad(load.name);
+      deleteById(load._id);
+      getLoads(); 
    }
-
    
-
-   const deleteLoad = async (name) => {
+   const deleteById = async (id) => {
       try {
-        const response = await fetch(`https://electric-sage-api.herokuapp.com/load/${name}`, {
-          method: "DELETE"
-        })
+        console.log ("inside delete load : " + id);
+        const response = await fetch(`https://electric-sage-api.herokuapp.com/load/${id}`, {
+          method: "DELETE", 
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+        const data = await response.json(); // <== deleted load
+       
+
       } catch (err) {
         console.log(err);
-      } 
+      } finally {
+        await getLoads(); 
+    }
     }
 
    return (

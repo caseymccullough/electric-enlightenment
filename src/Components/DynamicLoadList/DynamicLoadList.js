@@ -1,17 +1,8 @@
-import Load from '../Load/Load';
+
 import DynamicLoad from '../DynamicLoad/DynamicLoad';
-import style from '../../styles.css';
-import { localStorageAvailable } from '@material-ui/data-grid';
-
-
+import '../../styles.css';
 
 export default function DynamicLoadList({loads, time}) {
-
-
-
-   const turnOffAll = () => {
-      loads.forEach(load => load.turnOff())
-   }
 
    return (
       <div id="loads-table-container">

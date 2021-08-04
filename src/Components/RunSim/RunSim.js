@@ -7,12 +7,10 @@ import StopWatch from '../Stopwatch/Stopwatch';
 import WattageMeter from '../WattageMeter/WattageMeter';
 import DynamicLoadList from '../DynamicLoadList/DynamicLoadList';
 
-export default function RunSim({loads, seeResultsPage, time, setTime}) {
+export default function RunSim({loads, seeResultsPage, time, setTime, totalWattageHistory, setTotalWattageHistory}) {
 
    const [totalWattage, setTotalWattage] = useState(0);
    const [isActive, setIsActive] = useState(false);
-   const [totalWattageHistory, setTotalWattageHistory] = useState([]);
-
    const [isComplete, setIsComplete] = useState(false);
    
    useEffect(() => {
@@ -29,15 +27,6 @@ export default function RunSim({loads, seeResultsPage, time, setTime}) {
    const endSimulation = () =>{
 
       console.log ("clicked end simulation");
-      
-      // turn off everything that's on. (add timestamp)
-      // loads.forEach(load => {
-      //    if (load.isOn){
-      //       console.log ("turning off: ", load.name);
-      //       load.isOn = false; 
-      //       load.onOffData.push(-time);
-      //    }
-      // })
 
       setIsComplete(true);
  
@@ -63,25 +52,16 @@ export default function RunSim({loads, seeResultsPage, time, setTime}) {
    }
 
    const issueOnOffReport = (load) => { // negative means turned off
-       load.onOffData.push(load.isOn ? time: -time);
+      
       /* work in here. */
-      const timeStamp = [Math.abs(time)];
+      let timeStamp = [Math.abs(time)];
       loads.forEach(load => timeStamp.push (load.isOn ? load.wattage : load.standbyWattage));
-
-      console.log ("timestamp: ", timeStamp);
+      setTotalWattageHistory(...totalWattageHistory, timeStamp);
 
    }
 
    
-   const adjustTotalWattage = (delta) => {
-      //setTotalWattage (totalWattage + delta);
-      const newWattageDelta = {
-         time: time,
-         wattage: totalWattage
-      }
-      setTotalWattageHistory(totalWattageHistory.concat(newWattageDelta));
-      console.log (totalWattageHistory);
-   }
+ 
 
    return (
       <div id="simulation">
