@@ -10,18 +10,20 @@ React, JavaScript, HTML, CSS, Node.js, MongoDB, Express, [Google Charts Library]
 
 ## Getting Started: 
 
-![Screen Shot 2021-08-04 at 10 50 18 AM](https://user-images.githubusercontent.com/11179812/128202801-5f69c0ad-6106-45e7-a02a-fc77d17ea12f.png)
-![Screen Shot 2021-08-04 at 10 50 18 AM (2)](https://user-images.githubusercontent.com/11179812/128202805-18e586d5-4a99-44df-b880-c1aa9338736f.png)
+<img src="https://user-images.githubusercontent.com/11179812/128203357-807f0b47-aea1-464a-99ee-c82d55cdae6c.png" width="50%" height="50%" />
 
+1. Enter a username, login, and zip code. 
+2. Click the Register button to create a new account.
+                                                                                                                                     
+<img src="https://user-images.githubusercontent.com/11179812/128204087-65e52e22-7c0e-4a61-ba7d-6dff0ec378da.png" width="50%" height="50%" />
 
-<img src="https://user-images.githubusercontent.com/11179812/127500409-9541e2d9-f75d-480c-8201-e4f4df2ab2f8.png" width="50%" height="50%" />
-1. Enter the address for the property in question in the search bar at the top of the page. 
-2. Click on the right arrow, to move to the Solar Resource Data page. 
+3. The Load List will be populated with your previously-entered loads (NOTE: for the moment, there is a single list of loads that is "shared" by all users. Once I resolve password / auth issues, then your individual load list will save to your account.
+4. Use the "Submit New Load" tool to add any new loads prior to the simulation.  
+5. To remove a load, click on the red X that appears to the left of each listed load. 
+6. Click the Run Simulation Button when your list is complete. 
 
-<img src="https://user-images.githubusercontent.com/11179812/127501075-66b13e7b-8114-49c4-8ce8-58015fbb404f.png" width="50%" height="50%" />
+<img src="https://user-images.githubusercontent.com/11179812/128205199-c13bcb76-cdad-4ed9-86f6-d60c26c7c116.png" width="50%" height="50% />
 
-3. The Solar Resource Data page will show the lat/ long associated with the given address, as well as a map of the location. Confirm that this is the correct location and enter the price of electricity in the region of interest. 
-4. Click the right arrow to move to the System Information page. 
 
 <img src="https://user-images.githubusercontent.com/11179812/127501303-b5b6932e-d624-44af-aadf-f2521a485475.png" width="50%" height="50%" />
 
