@@ -22,15 +22,14 @@ React, JavaScript, HTML, CSS, Node.js, MongoDB, Express, [Google Charts Library]
 5. To remove a load, click on the red X that appears to the left of each listed load. 
 6. Click the Run Simulation Button when your list is complete. 
 
-<img src="https://user-images.githubusercontent.com/11179812/128205199-c13bcb76-cdad-4ed9-86f6-d60c26c7c116.png" width="50%" height="50% />
-                                                                                                                                     
-![Screen Shot 2021-08-04 at 11 09 57 AM](https://user-images.githubusercontent.com/11179812/128206092-cd135441-859d-4bc2-8cea-45c274980764.png)
+<img src="https://user-images.githubusercontent.com/11179812/128206092-cd135441-859d-4bc2-8cea-45c274980764.png" width="50%" height="50% />
+
+5. On the Simulation Page you will see the Timer, Total Wattage, and the Load List. Click the red start button to begin the simulation. 
+6. Once the Timer has started, turn loads on / off by clicking on them. 
+                                                                                                                                     ![Screen Shot 2021-08-04 at 11 16 02 AM]()
 
 
-5. Change the form as needed to describe the system planned for the given location. 
-6. Click the right arrow to move to the Data Summary page. 
-
-<img src="https://user-images.githubusercontent.com/11179812/127501585-62cbc404-4989-46a1-98fb-970279bdeb95.png" width="50%" height="50%" />
+<img src="https://user-images.githubusercontent.com/11179812/128206983-422f1b62-213a-4630-a93c-90d0e2896406.png" width="50%" height="50%" />
 
 7. Confirm that all data is correct. If it requires adjustment, you can click the back arrows to go back and revise your numbers. 
 8. Once all values are correct, click the "Submit Data" button. 
