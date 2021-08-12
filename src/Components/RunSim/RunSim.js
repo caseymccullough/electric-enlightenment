@@ -1,5 +1,5 @@
 
-import style from '../../styles.css';
+import '../../styles.css';
 
 import {useState, useEffect} from "react";
 
@@ -15,7 +15,7 @@ export default function RunSim({loads, seeResultsPage, time, setTime, totalWatta
    
    useEffect(() => {
                      setTotalWattage(calcTotalWattage(loads));
-                  });
+                  }, [calcTotalWattage, loads]);
    
    const calcTotalWattage = () => {
       

@@ -4,7 +4,7 @@ import {useState} from "react";
 import LoginForm from '../LoginForm/LoginForm';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
-export default function Home({users, setCurrentUser, setShowLoadProfile, setShowHome}) {
+export default function Home({users, setCurrentUser, setLoads, goToLoadProfile}) {
 
    const [isNewUser, setIsNewUser] = useState(false);
    const toggleReg = () => {setIsNewUser(!isNewUser)};
@@ -12,8 +12,8 @@ export default function Home({users, setCurrentUser, setShowLoadProfile, setShow
    return (
       <div id="reg-login-container">
           
-        {isNewUser ? <RegisterForm setCurrentUser = {setCurrentUser} setShowLoadProfile = {setShowLoadProfile} setShowHome = {setShowHome}></RegisterForm>:
-                      <LoginForm setCurrentUser = {setCurrentUser} users = {users} setShowLoadProfile = {setShowLoadProfile} setShowHome = {setShowHome}></LoginForm>
+        {isNewUser ? <RegisterForm setCurrentUser = {setCurrentUser} goToLoadProfile = {goToLoadProfile}></RegisterForm>:
+                      <LoginForm setCurrentUser = {setCurrentUser} setLoads = { setLoads } users = {users} goToLoadProfile = {goToLoadProfile}></LoginForm>
         }
         <button onClick={toggleReg}>{isNewUser ? "Click to Log In" : "Click to Register"}</button>
 

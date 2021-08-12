@@ -1,11 +1,20 @@
 import Load from '../Load/Load';
 import  '../../styles.css';
+import { useContext } from 'react';
+import { DataContext } from '../../App';
 
-export default function LoadList({loads, setLoads, getLoads}) {
-   
+import { getUserLoads } from '../../API/apiData'
+
+export default function LoadList({loads = []}) {
+
+   const {BASE_URL, currentUser, setCurrentUser} = useContext(DataContext);
+
+
+
+
    return (    
-         <div id="loads-table" >
-            <table>
+
+            <table id="loads-table">
                <thead>
                   <tr>
                      <th></th>
@@ -14,14 +23,13 @@ export default function LoadList({loads, setLoads, getLoads}) {
                      <th>Standby</th>
                   </tr>
                </thead>
+         
                <tbody>
-                     {loads.map((load, i) => 
-                  <Load load = {load} setLoad = {setLoads} getLoads = {getLoads} key= {i}></Load>
-                  )}
-               </tbody>
+                     {loads.map((load, i) => <Load load = {load} key= {i}></Load>)}
+               </tbody> 
+         
+               
             </table>
-         </div>
-     
       
    )
 

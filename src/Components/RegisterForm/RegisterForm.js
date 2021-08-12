@@ -1,40 +1,37 @@
 import  '../../styles.css';
-import {useState} from "react";
+import {useState, useContext} from "react";
+import { useHistory } from 'react-router';
+import { createUser } from '../../API/apiData.js'
+import { DataContext } from '../../App';
+
 
 export default function RegisterForm(props) {
   
-       const [userFormData, setUserFormData] = useState({
-        username: "",
-        password: "",
-        zipcode: "",
-        loads: []  
-      });
+  const history = useHistory()
+  const {BASE_URL} = useContext(DataContext);
+
+  const [userFormData, setUserFormData] = useState({
+      username: "",
+      password: ""
+  });
 
    const handleChange = (event)=> {
      setUserFormData({ ...userFormData, [event.target.name]: event.target.value});
      console.log(event.target.name + ": " + event.target.value);
    }
 
-   const createUser = async (event) => {
-   // event.preventDefault();
-    const body = {...userFormData}; // spreads data into the body
-    try {
-       const response = await fetch("https://electric-sage-api.herokuapp.com/user", {
-       method: "POST",
-       headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    
-    });
-    console.log("response: ", response);
-    } catch(error) {
-       console.error(error);
-    } 
-  }
+  const handleSubmit = async () => {
+    const newUser = await createUser(BASE_URL, userFormData )
+    if(newUser.error) {
+      console.log (`That ${newUser.error} is already taken`) // error should list whatever feature is limiting
+    }
+    else {
+      const { token, createdUser} = newUser;
+      window.localStorage.setItem("token", token);
+      window.localStorage.setItem("username", createdUser.username);
 
-  const handleSubmit = () =>{
-    createUser();
+    }
+    // shift the scene . . .
     props.setShowHome(false);
     props.setShowLoadProfile(true);
   }
@@ -65,15 +62,7 @@ export default function RegisterForm(props) {
          ></input>
        </label>
        <br></br>
-       <label>
-         Zip code
-         <input type="number" 
-         name="zipcode"
-         placeholder = "zip code"
-         value={userFormData.zipcode}
-         onChange={handleChange}
-         ></input>
-       </label>
+       
        <button onClick={handleSubmit}>Register</button>
      </form>
  </div>

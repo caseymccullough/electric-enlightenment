@@ -2,7 +2,7 @@ import { useThemeProps } from '@material-ui/data-grid';
 import {Link} from 'react-router-dom';
 import style from "./NavBar.css";
 
-export default function NavBar(props) {
+export default function NavBar({goToLogin, goToLoadProfile, goToSim, currentUser, goToResults}) {
 
    return (
       <div id="nav-container">
@@ -14,12 +14,16 @@ export default function NavBar(props) {
             <h3>Changing the way you think about energy</h3>
          </div>
          <nav>
-         {/* {props.currentUser ? <p>Welcome {props.currentUser.username}</p> : <div/>} */}
+         
             <ul>
-               {props.currentUser === null ? <li onClick={props.goToLogin}>Login </li>: <li onClick={props.goToLogin}>Your Profile </li>}
-               <li onClick={props.goToLoadProfile}>Load Profile</li>
-               <li onClick={props.goToSim}>Simulation</li>
-               <li onClick={props.goToResults}>Results</li>
+               {
+                  currentUser === null ? 
+                  <li onClick={goToLogin}>Login </li>:
+                  <li> Your Profile </li>
+               }
+               <li onClick={goToLoadProfile}>Load Profile</li>
+               <li onClick={goToSim}>Simulation</li>
+               <li onClick={goToResults}>Results</li>
 
             </ul>
          </nav>
